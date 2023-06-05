@@ -13,7 +13,7 @@ function QuizResult(props) {
         Your Quiz is completed Succesfully
         </Typography>
     </div>
-    <button id="next-button" onClick={props.tryAgain}>Try Again</button>
+    <button id="next-button" onClick={props.tryAgain}>Play Another Quiz</button>
     </>
   )
 }

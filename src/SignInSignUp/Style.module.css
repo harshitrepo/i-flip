@@ -1,64 +1,80 @@
-* {
-    text-align: center;
-    box-sizing: border-box;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  min-height: 800vh;
+  min-width: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  animation: fadeIn 1s;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.login-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.login-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+.sign-out-button {
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 100px;
+  transition: background-color 0.3s;
+}
+
+.sign-out-button:hover {
+  background-color: #d32f2f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .container {
-    margin-top: 100px;
+  to {
+    opacity: 1;
   }
-  
-  .input_space {
-    margin-bottom: 10px;
-  }
-  
-  .input {
-    height: 30px;
-    width: 100%;
-    font-size: 18px;
-    padding: 5px;
-  }
-  
-  .button {
-    height: 30px;
-    width: 100%;
-    background-color: rgb(3, 23, 249);
-    border: none;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .button:hover {
-    background-color: rgb(2, 42, 201);
-  }
-  
-  .logout {
-    margin-right: 5px;
-    color: white;
-    font-weight: 400;
-  }
-  
-  .delete {
-    margin-right: 5px;
-    color: white;
-    background-color: rgb(19, 103, 142);
-    font-weight: 400;
-  }
-  
-  @media (min-width: 768px) {
-    /* Adjust the following styles for tablets and larger screens */
-    .container {
-      width: 400px;
-      margin: 100px auto;
-    }
-    
-    .input {
-      width: 100%;
-    }
-    
-    .button {
-      width: 100%;
-    }
-  }
-  
+}

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { QuizData } from '../Data/QuizData';
 import QuizResult from './QuizResult';
+import Dropdown from './Dropdown';
+import { Button } from '@mui/material';
 function Quiz() {
+  const history = useHistory();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [clickedOption, setClickedOption] = useState(0);
@@ -44,19 +48,46 @@ function Quiz() {
   };
 
   const resetAll = () => {
-    setShowResult(false);
-    setCurrentQuestion(0);
-    setClickedOption(0);  
-    setScore(0);
-    localStorage.clear();
+    
+    // setShowResult(false);
+    // setCurrentQuestion(0);
+    // setClickedOption(0);
+    // setScore(0);
+    // localStorage.clear();
+    history.push('/dropDown');
   };
 
+  const handleSignOut = () => {
+
+    history.push('/');
+  };
+  const logout = () => {
+    localStorage.removeItem("signUp");
+    // window.location.reload();
+    history.push('/');
+  };
+
+  const deleteAccount = () => {
+    localStorage.clear();
+    // window.location.reload('signUp');
+    history.push('/');
+  };
+
+
   return (
-    <div>
-      <h1 className="heading-txt" style={{ color: 'black', padding: '5px' }}>Quiz APP</h1>
+
+    <div >
+     <div  style={{ display :'flex', flexDirection: 'row', alignItems: 'center' ,backgroundColor:'#fe727e',width:'180vh',justifyContent:'flex-end'}}>
+          <Button style={{margin:'4px'}} variant="contained" onClick={logout}>Sign Out</Button>
+          <Button style={{margin:'10px'}} variant="contained" onClick={deleteAccount}>Delete Account</Button>
+        </div>
+      <h1 className="heading-txt" style={{ color: 'black', padding: '5px' }
+      }> Quiz APP</h1 >
       <div className="container">
         {showResult ? (
-          <QuizResult score={score} totalScore={QuizData.length} tryAgain={resetAll} />
+          <QuizResult score={score} totalScore={QuizData.length} tryAgain={resetAll} 
+            
+          />
         ) : (
           <>
             <div className="question">
@@ -77,10 +108,27 @@ function Quiz() {
               })}
             </div>
             <input type="button" value="Next" id="next-button" onClick={changeQuestion} />
+
           </>
         )}
       </div>
-    </div>
+      {/* <button type='button'
+              onClick={handleSignOut}
+              style={{
+                marginTop: '20px',
+                padding: '10px',
+                borderRadius: '5px',
+                backgroundColor: '#f44336',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer',
+             }}
+            >
+              Sign Out
+            </button> */}
+
+    </div >
   );
 }
+
 export default Quiz;

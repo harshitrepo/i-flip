@@ -1,7 +1,7 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Typography } from '@mui/material';
+
 function Dropdown() {
   const history = useHistory();
   const [selectedOption, setSelectedOption] = useState('');
@@ -17,47 +17,43 @@ function Dropdown() {
     }
   }
 
-  return (
+  
 
+  return (
     <div
-   
       style={{
         backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '20px',
-        width: '100%',
-        minWidth: '224vh',
-        height: '100%',
-        minHeight: '100vh'
-
-
+        padding: '5px',
+        width:'190vh',
+        minWidth: '20vh',
+        minHeight: '20vh',
+        height:'510px'
       }}
     >
       <Typography
-        variant="h1"
+        variant="h2"
         component="h1"
         color="primary"
         align="center"
         gutterBottom
         sx={{
-          // marginBottom: '30px',
-          // padding: '30px',
+          marginBottom: '30px',
+          padding: '25px',
           fontWeight: 'bold',
-          background: 'linear-gradient(45deg, #FE6B8B 40%, #FF8E53 80%)',
+          background: 'linear-gradient(65deg, #FE6B8B 80%, #FF8E53 1000%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
-          height:'5%',
-          width:'50%',
-
+          height: '25%',
+          width: '80%',
         }}
       >
-         Quiz Section
+        Quiz Section
       </Typography>
 
-      {/* <h2>quiz</h2> */}
       <select
         style={{
           padding: '22px',
@@ -76,10 +72,10 @@ function Dropdown() {
       <Button style={{ padding: '10px', marginBottom: '30px' }} variant="contained" onClick={handleContinue}>
         Continue
       </Button>
+
+     
     </div>
   );
 }
 
 export default Dropdown;
-
-
